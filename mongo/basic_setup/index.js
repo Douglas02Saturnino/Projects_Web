@@ -3,9 +3,13 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 
+<<<<<<< HEAD
 const Product = require('./models/product');
 
 mongoose.connect('mongodb://localhost:27017/farmStand', { useNewUrlParser: true, useUnifiedTopology: true })
+=======
+mongoose.connect('mongodb://localhost:27017/dogs', { useNewUrlParser: true, useUnifiedTopology: true })
+>>>>>>> d2420d44bb148a9c985250a5b2c18be058680052
 .then(() => {
     console.log('Mongo Connection Open!');
 })
@@ -16,6 +20,7 @@ mongoose.connect('mongodb://localhost:27017/farmStand', { useNewUrlParser: true,
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+<<<<<<< HEAD
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/product', async (req, res) => {
@@ -42,6 +47,13 @@ app.get('/products/:id', async (req, res) => {
     res.render('products/show', { product });
 })
 
+=======
+
+app.get('/dog', (req, res) => {
+    res.send('Woof!');
+});
+
+>>>>>>> d2420d44bb148a9c985250a5b2c18be058680052
 app.listen(3000, () => {
     console.log('Server is running on http://localhost:3000');
 });
